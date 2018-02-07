@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
-import './Header.css';
 
 class Header extends Component {
   render() {
     return (
-      <div className="Header">
-         <h1>Wendte Designs Blog</h1>
-      </div>
+      <header className="Header">
+        <div className="page-title">
+          <h2>Wendte Designs Blog</h2>
+        </div>
+        <nav className="links">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/blog/algorithms">Latest Post</a></li>
+          </ul>
+        </nav>
+      </header>
     );
   }
 }

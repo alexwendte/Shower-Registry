@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
-import './Home.css';
 
 class Home extends Component {
   render() {
     return (
       <div className="Home">
-         <h1>THIS IS THE HOMEPAGE</h1>
+        <div className="landing-screen">
+          <div className="headers">
+            <h1>Welcome to the Wendte Digital Designs Blog!</h1>
+            <h2>View My <a href="/blog/algorithms">Most Recent Post</a></h2>
+          </div>
+        </div>
+        <section>
+          <p>
+            Check out my <a href="/blog">Blog!</a>
+          </p>
+        </section>
       </div>
     );
   }

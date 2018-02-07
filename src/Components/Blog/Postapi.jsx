@@ -3,23 +3,33 @@
 // solution would be more appropriate.
 
 //LOOK INTO WHAT THAT WOULD BE!!!!
+//import React from "react";
+import React from 'react';
+import First from "./PostArchive/First";
+import Second from "./PostArchive/Second";
+import Third from "./PostArchive/Third";
 const PostAPI = {
 
    posts: [
       {
-        number: 1,
-        title: 'First Post',
-        content: 'THIS WAS MY FIRST LPSDIOFEJF'
+        url: "first-ever-post",
+        title: "First Ever Blog Post!",
+        content: <First />
       },
       {
-        number: 2,
-        title: 'Second Post',
-        content: 'THIS WAS MY SECOND POST '
+        url: "algorithms",
+        title: "Algorithms, Oh My!",
+        content: <Second />
+      },
+      {
+        url: "third",
+        title: "Algorithms, Oh My!",
+        content: <Third />
       }
     ],
     all: function() { return this.posts},
     get: function(id) {
-      const isPost = p => p.number === id
+      const isPost = p => p.url === id
       return this.posts.find(isPost)
     }
   }

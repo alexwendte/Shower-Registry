@@ -1,0 +1,38 @@
+@import './../../reset.css';
+
+* {
+   font-family: 'Ubuntu', 'Arial', sans-serif;
+}
+
+$pri: #FF9500;
+$sec: #0086FF;
+
+.App{
+   p{
+      font-size: 1.8rem;
+      line-height: 1.3em;
+   }
+   h1{
+      font-size: 3.6rem;
+   }
+   h2{
+      font-size: 2.7rem;
+   }
+   h3{
+      font-size: 2.11rem;
+   }
+   %wendte-links{
+      a{
+         color: $pri;
+      }
+      a:hover{
+         color:$sec;
+      }
+   }
+}
+
+@import 'Header';
+@import 'Home';
+@import 'Post';
+@import 'Footer';
+@import 'BlogHome';
