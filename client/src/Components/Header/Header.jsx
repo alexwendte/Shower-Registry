@@ -9,7 +9,7 @@ class Header extends Component {
         </div>
         <nav className="links">
           <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/blog">Blog</a></li>
             <li><a href="/blog/algorithms">Latest Post</a></li>
           </ul>
