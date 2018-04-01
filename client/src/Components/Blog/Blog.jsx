@@ -9,8 +9,8 @@ class Blog extends Component {
     return (
       <div>
          <Switch>
-            <Route exact path='/blog/' component={BlogHome}/>
-            <Route path='/blog/:url' component={Post}/>
+            <Route exact path='/blog/' component={ BlogHome }/>
+            <Route path='/blog/:url' component={ Post }/>
          </Switch>
       </div>
     );

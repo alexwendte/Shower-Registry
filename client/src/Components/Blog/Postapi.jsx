@@ -3,7 +3,6 @@
 // solution would be more appropriate.
 
 //LOOK INTO WHAT THAT WOULD BE!!!!
-//import React from "react";
 import React from 'react';
 import First from "./PostArchive/First";
 import Second from "./PostArchive/Second";
