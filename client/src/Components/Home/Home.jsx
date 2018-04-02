@@ -7,7 +7,7 @@ class Home extends Component {
       <div className="Home">
         <div className="landing-screen">
           <div className="headers">
-            <h1>This Brianna's and my shower Registry!</h1>
+            <h1>This Brianna's and my shower Registry!</h1> Test 2
             <h2>View My <Link to="/blog/algorithms">Most Recent Post</Link></h2>
           </div>
         </div>
