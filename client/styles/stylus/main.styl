@@ -1,0 +1,122 @@
+@import '../css/reset.styl'
+maroon = #b30000
+white = #ffffff
+black = #000
+body
+  margin 0 auto
+  font-family: sans-serif
+  background-color #fefefe
+.container
+  max-width 1100px
+  margin: 0 auto
+.hero
+  background-image linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),url("https://scontent.ftul1-1.fna.fbcdn.net/v/t31.0-8/22770745_1738305099521592_8154332545482689800_o.jpg?_nc_cat=0&oh=f1a179f0ef2c136b2e3a954f828efcea&oe=5B7033DE")
+  background-position: top center
+  background-size cover
+  position: relative
+  width: 100%
+  padding 3rem 0
+  h1
+    text-align center 
+    padding 2rem 1rem
+    color maroon
+    text-shadow: 1px 1px 30px #000000;
+.information
+  display flex
+  padding 0 2rem
+  align-items center
+  color: white
+  z-index 0
+  p
+    font-size 1.8rem
+    padding 1rem 0
+  .left, .right
+    padding 2rem
+.note
+  padding 3rem 2rem
+  .h3
+    color maroon
+    font-size: 2.2rem
+    font-weight: 700
+  p
+    font-size 1.8rem
+    color #222222
+    display: inline-block
+    padding: 0 1rem
+ul
+  li:nth-child(2n+1)
+    background-color #e0d7d7
+  li
+    display flex
+    justify-content: space-between
+    align-items: center
+    border-radius: 5px
+    padding 2rem 2rem
+    img
+      border-radius: 5px
+      max-width: 300px
+.items
+  font-size 1.8rem
+.item-title
+  color maroon
+  font-size 2.2rem
+  font-weight 700
+  padding: 1rem
+div.quantity-buttons
+  padding 2rem
+  display flex
+  width 15rem
+  justify-content: space-between
+  button
+    padding 1rem
+    background-color: maroon
+    border none
+    border-radius 5px
+    color #ffffff
+    font-size: 2rem
+    font-weight: 700
+    width: 4.2rem
+    &:hover
+      background-color: #cc0000
+      cursor: pointer
+@media(max-width: 919px)
+  .information
+    display: block
+    h3
+      font-size 3rem
+    p
+      font-size: 2rem
+      text-shadow: 1px 1px 30px black
+  ul li
+    display:block
+    img
+      margin: 0 auto
+      display: block
+    span
+      display: block
+      text-align: center
+    span.quantities
+      display: inline-block
+    div.quantity-buttons
+      margin: 0 auto
+
+//Test styles
+ul li:nth-child(2n)
+  background-color: maroon
+  .item-title
+    color white
+  div.quantity-buttons
+    button
+      background-color: none
+      border: solid 2px white
+      color: white
+      &:hover
+        background-color: white
+        color: maroon
+  .numbers
+    color: white
+ul li
+ margin: 1rem 0

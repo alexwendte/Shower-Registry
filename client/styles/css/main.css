@@ -1,0 +1,290 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+html {
+  font-size: 62.5%;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1.5;
+}
+@media (max-width: 767px) {
+  body {
+    line-height: 1.3;
+  }
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+h1 {
+  font-size: 3.6rem;
+}
+h2 {
+  font-size: 2.7rem;
+}
+h3 {
+  font-size: 2.11rem;
+}
+body {
+  margin: 0 auto;
+  font-family: sans-serif;
+  background-color: #fefefe;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.hero {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://scontent.ftul1-1.fna.fbcdn.net/v/t31.0-8/22770745_1738305099521592_8154332545482689800_o.jpg?_nc_cat=0&oh=f1a179f0ef2c136b2e3a954f828efcea&oe=5B7033DE");
+  background-position: top center;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  padding: 3rem 0;
+}
+.hero h1 {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #b30000;
+  text-shadow: 1px 1px 30px #000;
+}
+.information {
+  display: flex;
+  padding: 0 2rem;
+  align-items: center;
+  color: #fff;
+  z-index: 0;
+}
+.information p {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+.information .left,
+.information .right {
+  padding: 2rem;
+}
+.note {
+  padding: 3rem 2rem;
+}
+.note .h3 {
+  color: #b30000;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+.note p {
+  font-size: 1.8rem;
+  color: #222;
+  display: inline-block;
+  padding: 0 1rem;
+}
+ul li:nth-child(2n+1) {
+  background-color: #e0d7d7;
+}
+ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  padding: 2rem 2rem;
+}
+ul li img {
+  border-radius: 5px;
+  max-width: 300px;
+}
+.items {
+  font-size: 1.8rem;
+}
+.item-title {
+  color: #b30000;
+  font-size: 2.2rem;
+  font-weight: 700;
+  padding: 1rem;
+}
+div.quantity-buttons {
+  padding: 2rem;
+  display: flex;
+  width: 15rem;
+  justify-content: space-between;
+}
+div.quantity-buttons button {
+  padding: 1rem;
+  background-color: #b30000;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  width: 4.2rem;
+}
+div.quantity-buttons button:hover {
+  background-color: #c00;
+  cursor: pointer;
+}
+@media (max-width: 919px) {
+  .information {
+    display: block;
+  }
+  .information h3 {
+    font-size: 3rem;
+  }
+  .information p {
+    font-size: 2rem;
+    text-shadow: 1px 1px 30px #000;
+  }
+  ul li {
+    display: block;
+  }
+  ul li img {
+    margin: 0 auto;
+    display: block;
+  }
+  ul li span {
+    display: block;
+    text-align: center;
+  }
+  ul li span.quantities {
+    display: inline-block;
+  }
+  ul li div.quantity-buttons {
+    margin: 0 auto;
+  }
+}
+ul li:nth-child(2n) {
+  background-color: #b30000;
+}
+ul li:nth-child(2n) .item-title {
+  color: #fff;
+}
+ul li:nth-child(2n) div.quantity-buttons button {
+  background-color: none;
+  border: solid 2px #fff;
+  color: #fff;
+}
+ul li:nth-child(2n) div.quantity-buttons button:hover {
+  background-color: #fff;
+  color: #b30000;
+}
+ul li:nth-child(2n) .numbers {
+  color: #fff;
+}
+ul li {
+  margin: 1rem 0;
+}

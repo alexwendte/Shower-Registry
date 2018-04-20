@@ -1,11 +1,3 @@
-// for fetching the data from data/data.json
-/* let items;
-fetch('/data/data.json')
-  .then((response) => response.json())
-  .then((myJson) => {
-    items = myJson.rowData;
-  }); */
-
 fetch('/data')
   .then((response) => response.json())
   .then((myJson) => {
@@ -13,46 +5,62 @@ fetch('/data')
   });
 
 const allItems = document.querySelector('.all-items');
-let addButtons;
-let removeButtons;
-let quantities;
 
 function displayItems(items) {
+  const insert = 'upload/c_fill,h_150/';
   const html = items
-    .map(
-      (item) => `
+    .map((item) => {
+      const cloudLink = item.values[0].hyperlink;
+      const index = cloudLink.indexOf('upload/');
+      const front = cloudLink.slice(0, index);
+      const back = cloudLink.slice(index + 7);
+      const final = front + insert + back;
+      return `
       <li>
-        <a href=${item.values[0].hyperlink}>${
+      <img src="${final}" alt="${item.values[0].formattedValue}" height="150">  
+      <span class="item-title">${
         item.values[0].formattedValue
-      }</a><span> Quantity Desired: ${
+      }</span><span class ="numbers"> Desire: ${
         item.values[1].formattedValue
-      } Quantity Purchased: <span class="quantity-purchased" data-id="${
+      } Purchased: <span class="quantities" data-id="${item._id}">${
+        item.quantityPurchased
+      }</span></span><div class="quantity-buttons"><button class="remove" value="${
         item._id
-      }">${item.quantityPurchased}</span></span><button class="add" value="${
-        item._id
-      }">+1</button><button class="remove" value="${item._id}">-1</button>
+      }">-1</button><button class="add" value="${item._id}">+1</button></div>
       </li>
-      `
-    )
+      `;
+    })
     .join('');
   allItems.innerHTML = html;
+  buttonClicks();
+}
 
-  addButtons = document.querySelectorAll('.add');
-  removeButtons = document.querySelectorAll('.remove');
-  quantities = [...document.querySelectorAll('.quantity-purchased')];
+function buttonClicks() {
+  const addButtons = document.querySelectorAll('.add');
+  const removeButtons = document.querySelectorAll('.remove');
+  const quantities = [...document.querySelectorAll('.quantities')];
 
   addButtons.forEach((button) => {
-    button.addEventListener('click', () => changeQuantity(button));
+    button.addEventListener('click', () => changeQuantity(button, quantities));
   });
   removeButtons.forEach((button) => {
-    button.addEventListener('click', () => changeQuantity(button));
+    button.addEventListener('click', () => changeQuantity(button, quantities));
   });
 }
 
-function changeQuantity(button) {
-  let increment;
-  if (button.classList[0] === 'add') increment = 1;
-  else if (button.classList[0] === 'remove') increment = -1;
+function changeQuantity(button, quantities) {
+  const increment = button.classList[0] === 'add' ? 1 : -1;
+  const index = quantities.findIndex(
+    (quantity) => quantity.dataset.id === button.value
+  );
+  const currentQuantity = quantities[index];
+  if (increment === -1 && parseInt(currentQuantity.innerHTML, 10) === 0) return;
+  postNewQuantity(button, increment);
+  const newQuantity = parseInt(currentQuantity.innerHTML, 10) + increment;
+  currentQuantity.innerHTML = newQuantity;
+}
+
+function postNewQuantity(button, increment) {
   fetch('/data/quantity', {
     method: 'POST',
     headers: new Headers({
@@ -66,30 +74,4 @@ function changeQuantity(button) {
       console.error('Error:', error);
     })
     .then((response) => console.log('Success:', response));
-  const index = quantities.findIndex(
-    (quantity) => quantity.dataset.id === button.value
-  );
-  const newQuantity = parseInt(quantities[index].innerHTML, 10) + increment;
-  quantities[index].innerHTML = newQuantity;
 }
-
-// for posting from a form without submitting, and resetting the database
-/* const form = document.querySelector('.form');
-form.addEventListener('submit', postData);
-function postData(e) {
-  e.preventDefault();
-  const name = document.getElementById('name');
-  const quote = document.getElementById('quote');
-
-  fetch('/data/load', {
-    method: 'POST',
-    headers: new Headers({
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    }),
-    body: JSON.stringify(items),
-  })
-    .then((res) => res.json())
-    .catch((error) => console.error('Error:', error))
-    .then((response) => console.log('Success:', response));
-} */
